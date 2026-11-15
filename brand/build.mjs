@@ -1,5 +1,5 @@
 // Writes every SVG of the brand from tokens.json and wordmarks.json.
-// Run: node docs/brand/build.mjs   (then node docs/brand/render.mjs for the PNG files)
+// Run: node brand/build.mjs   (then node brand/render.mjs for the PNG files)
 // It needs nothing installed. The names are stored as outlines in wordmarks.json,
 // so no file here depends on a font.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';

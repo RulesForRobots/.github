@@ -53,12 +53,12 @@ The values are in `tokens.json`, which the generator reads.
 | `lockups/` | The mark with the name beside it, in a `-light` and a `-dark` version | README headers and documentation. Light is for light pages, dark for dark pages |
 | `social/` | A 1280 by 640 image for each volume, as SVG and PNG | A repository's Settings, General, Social preview |
 
-To show a lockup at the top of a README so that it follows the reader's theme:
+To show a lockup at the top of a README in any of the organization's repositories, so that it follows the reader's theme:
 
 ```html
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/brand/lockups/engineering-dark.svg">
-  <img src="docs/brand/lockups/engineering-light.svg" alt="Rules for Robots Engineering" height="64">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RulesForRobots/.github/raw/main/brand/lockups/engineering-dark.svg">
+  <img src="https://github.com/RulesForRobots/.github/raw/main/brand/lockups/engineering-light.svg" alt="Rules for Robots Engineering" height="64">
 </picture>
 ```
 
@@ -83,8 +83,8 @@ To show a lockup at the top of a README so that it follows the reader's theme:
 Edit `tokens.json` or `build.mjs`, never the generated files, then run:
 
 ```
-node docs/brand/build.mjs
-node docs/brand/render.mjs
+node brand/build.mjs
+node brand/render.mjs
 ```
 
 The first writes every SVG and needs nothing installed. The second renders the PNG files and needs Playwright with its Chromium; any other tool that renders an SVG at the same size will do.

@@ -1,5 +1,5 @@
 // Renders the PNG files from the SVG files that build.mjs wrote.
-// Run: node docs/brand/render.mjs
+// Run: node brand/render.mjs
 // It needs Playwright and its Chromium, which this repository does not install.
 // Any other tool that turns an SVG into a PNG at the sizes below gives the same result.
 import { readdirSync, readFileSync } from 'node:fs';
