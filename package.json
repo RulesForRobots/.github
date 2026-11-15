@@ -1,0 +1,14 @@
+{
+  "name": "rulesforrobots-github",
+  "private": true,
+  "type": "module",
+  "description": "Defaults and front page for the RulesForRobots organization, and its brand.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "verify": "node brand/build.mjs && git diff --exit-code -- brand/marks brand/lockups brand/social",
+    "brand": "node brand/build.mjs && node brand/render.mjs"
+  }
+}

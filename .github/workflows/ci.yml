@@ -1,0 +1,28 @@
+# Checks that the brand's SVG files are what brand/build.mjs writes from brand/tokens.json, so nobody
+# edits a generated file by hand. "verify" is the check for branch protection to require.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Brand files match their sources
+        run: npm run verify
+      - name: Issue forms are valid YAML
+        run: |
+          for f in .github/ISSUE_TEMPLATE/*.yml; do
+            ruby -ryaml -e 'YAML.load_file(ARGV[0])' "$f" && echo "$f: ok"
+          done

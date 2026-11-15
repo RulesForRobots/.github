@@ -1,0 +1,50 @@
+# Feedback from a project that uses Rules for Robots. The rfr-feedback
+# plugin's report-feedback skill fills this form in through a link, or files the same fields with gh.
+# Field IDs must match FIELDS in rfr-feedback (rules-for-robots-core, plugins/rfr-feedback). Carried from
+# lifelike-and-believable/rules-for-robots .github/ISSUE_TEMPLATE/feedback.yml at 3f42231, areas updated.
+name: Feedback from a project
+description: Something a project using Rules for Robots found, with what you would change.
+title: "Feedback: "
+labels: [feedback]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository is public, so this issue will be too. Describe the problem in general terms: leave out names, private links, code, content, and anything else that is not yours to publish.
+  - type: input
+    id: area
+    attributes:
+      label: Area
+      description: |
+        Optional; leave it blank if you are not sure, and the maintainer will assign it. The plugin concerned: rfr-core (guards, setup, the working-agreement rules), rfr-process (the process: state, the GitHub gate, delivery runs, the reusable workflow), rfr-feedback (this form), rfr-engineering, rfr-web, rfr-unreal, rfr-android, or rfr-creation. Or: rules (a rule itself), evals, a new domain or plugin (say what kind of project, what it had to borrow or do without, and why), or other.
+      placeholder: rfr-process
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: The version of each rfr plugin involved, as /plugin lists them.
+      placeholder: rfr-core 1.0.0, rfr-process 1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+      description: What you did, what the process, check, or skill did, and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: The message, output, or a minimal example that shows it, with private details removed.
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggestion
+      description: What you would change, if you have an idea.
+  - type: input
+    id: source
+    attributes:
+      label: Kind of project
+      description: Optional, in general terms, for example "a static site, rules only".
